@@ -10,6 +10,7 @@ public class Comentario {
     @GeneratedValue
     private Long id;
 
+    @Column(nullable = false, length = 4000)
     private String descricao;
 
     private LocalDateTime criadaEm = LocalDateTime.now();
@@ -19,6 +20,5 @@ public class Comentario {
 
     @ManyToOne
     private Issue issue;
-
 
 }

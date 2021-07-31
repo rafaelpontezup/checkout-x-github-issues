@@ -2,7 +2,6 @@ package br.com.zup.edu.githubissues.issues;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -27,7 +26,7 @@ public class Issue {
     private Status status;
 
     @OneToMany(mappedBy = "issue")
-    private List<Comentario> comentarios = new ArrayList<Comentario>();
+    private List<Comentario> comentarios;
 
     @Column(nullable = false)
     private LocalDateTime criadaEm = LocalDateTime.now();
