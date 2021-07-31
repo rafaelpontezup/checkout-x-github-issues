@@ -7,18 +7,16 @@ import java.time.LocalDateTime;
 public class Comentario {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String descricao;
 
-    private LocalDateTime criadaEm = LocalDateTime.now();
+    private LocalDateTime criadaEm;
 
     @ManyToOne
     private Usuario autor;
 
-    @ManyToOne
+    @ManyToOne // tabela ou coluna? coluna
     private Issue issue;
-
-
 }
